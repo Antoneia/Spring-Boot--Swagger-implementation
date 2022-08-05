@@ -1,0 +1,15 @@
+@SpringBootApplication
+@EnableSwagger2
+
+public class projeAdi {
+
+	public static void main(String[] args) {
+		SpringApplication.run(projeAdi.class, args);
+	}
+	@Bean
+	public Docket api() {
+		return new Docket(DocumentationType.SWAGGER_2)
+				.select()
+				.apis(RequestHandlerSelectors.basePackage("proje.adi"))
+				.build();
+	}
